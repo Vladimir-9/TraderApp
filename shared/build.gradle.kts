@@ -32,11 +32,11 @@ kotlin {
             implementation(libs.kermit)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
-            implementation(libs.ktor.client.serialization)
             implementation(libs.ktor.client.logging)
             implementation(libs.multiplatformSettings)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
+            implementation(project(":core-network"))
         }
 
         commonTest.dependencies {
@@ -45,7 +45,6 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.kotlinx.coroutines.android)
-            implementation(libs.ktor.client.okhttp)
             implementation(libs.sqlDelight.driver.android)
         }
 
