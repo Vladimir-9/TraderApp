@@ -21,9 +21,9 @@ struct ContentView: View {
                         .font(.system(size: 200))
                         .foregroundColor(.accentColor)
                     
-                    let ff = FibonacciKt.getFibonacciNumbers(count: 7)
+                    let id: String = String(describing: FibonacciKt.getFibonacciNumbers(count: 7).data?.id ?? 0)
                     
-                    Text("SwiftUI: \(ff)")
+                    Text("SwiftUI: \(id)")
                 }
                 .transition(.move(edge: .top).combined(with: .opacity))
             }

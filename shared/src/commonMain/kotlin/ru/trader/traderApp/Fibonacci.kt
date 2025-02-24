@@ -1,26 +1,17 @@
 package ru.trader.traderApp
 
-/**
- * Returns a list of Fibonacci numbers up to the specified count.
- *
- * @param count The number of Fibonacci numbers to generate.
- * @return A list of Fibonacci numbers.
- * @throws IllegalArgumentException if count is less than zero.
- */
-fun getFibonacciNumbers(count: Int): List<Int> {
-    require(count >= 0)
-    val result = mutableListOf<Int>()
+import kotlinx.coroutines.runBlocking
+import ru.trader.traderApp.api.TraderApi
+import ru.trader.traderApp.model.CheckApiKeyDto
+import ru.trader.traderApp.httpClient.createHttpClient
 
-    if (count == 0) return result
+fun getFibonacciNumbers(count: Int): CheckApiKeyDto {
 
-    var t1 = 0
-    var t2 = 1
-    for (i in 1..count) {
-        result.add(t1)
-        val sum = t1 + t2
-        t1 = t2
-        t2 = sum
+    val httpClient = createHttpClient("CAEQycHMBhoY7BbYqeMlNsg8NCb0/Bc5hqkGJTpJR8d2")
+
+    val dd = TraderApi(httpClient)
+
+    return runBlocking {
+        dd.checkAccessToken()
     }
-
-    return result
 }

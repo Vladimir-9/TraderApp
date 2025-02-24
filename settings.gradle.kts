@@ -31,3 +31,4 @@ dependencyResolutionManagement {
 includeBuild("convention-plugins")
 include(":shared")
 include(":app")
+include(":core-network")
