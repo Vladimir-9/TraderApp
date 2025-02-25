@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.android.library)
@@ -75,9 +78,19 @@ android {
     }
 }
 
+val keystorePropertiesFile = rootProject.file("local.properties")
+val keystoreProperties = Properties()
+keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+
 buildConfig {
     // BuildConfig configuration here.
     // https://github.com/gmazzo/gradle-buildconfig-plugin#usage-in-kts
+
+    val apiKey= keystoreProperties["API_KEY"].toString()
+    val clientId= keystoreProperties["CLIENT_ID"].toString()
+
+    buildConfigField("API_KEY", apiKey)
+    buildConfigField("CLIENT_ID", clientId)
 }
 
 sqldelight {

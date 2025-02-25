@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    val id = "${getFibonacciNumbers(7).data?.id ?: ""}"
+                    val id = getFibonacciNumbers(7)
 
                     Text(id)
                 }

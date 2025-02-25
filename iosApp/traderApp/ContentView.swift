@@ -21,7 +21,7 @@ struct ContentView: View {
                         .font(.system(size: 200))
                         .foregroundColor(.accentColor)
                     
-                    let id: String = String(describing: FibonacciKt.getFibonacciNumbers(count: 7).data?.id ?? 0)
+                    let id: String = String(describing: FibonacciKt.getFibonacciNumbers(count: 7))
                     
                     Text("SwiftUI: \(id)")
                 }
