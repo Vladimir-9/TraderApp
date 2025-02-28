@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlinx.serialization)
-    alias(libs.plugins.sqlDelight)
     alias(libs.plugins.buildConfig)
     id("convention.publication")
 }
@@ -40,6 +39,7 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(project(":core-network"))
+            implementation(project(":core-database"))
         }
 
         commonTest.dependencies {
@@ -47,6 +47,7 @@ kotlin {
         }
 
         androidMain.dependencies {
+            implementation(libs.koin.androidx.compose)
             implementation(libs.kotlinx.coroutines.android)
             implementation(libs.sqlDelight.driver.android)
         }
@@ -91,14 +92,4 @@ buildConfig {
 
     buildConfigField("API_KEY", apiKey)
     buildConfigField("CLIENT_ID", clientId)
-}
-
-sqldelight {
-    databases {
-        create("MyDatabase") {
-            // Database configuration here.
-            // https://cashapp.github.io/sqldelight
-            packageName.set("ru.trader.traderApp.db")
-        }
-    }
 }

@@ -1,0 +1,14 @@
+CREATE TABLE User (
+    id TEXT NOT NULL
+);
+
+insertLaunch:
+INSERT INTO User(id)
+VALUES(?);
+
+selectId:
+SELECT User.*
+FROM User;
+
+removeAllId:
+DELETE FROM User;

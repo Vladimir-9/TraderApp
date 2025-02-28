@@ -10,9 +10,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import org.koin.android.ext.android.inject
 import ru.trader.traderApp.ui.theme.TraderAppTheme
 
 class MainActivity : ComponentActivity() {
+
+    private val mockRepository: MockRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    val id = getFibonacciNumbers(7)
+                    val id = mockRepository.get()
 
                     Text(id)
                 }

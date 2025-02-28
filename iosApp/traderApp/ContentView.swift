@@ -20,8 +20,8 @@ struct ContentView: View {
                     Image(systemName: "swift")
                         .font(.system(size: 200))
                         .foregroundColor(.accentColor)
-                    
-                    let id: String = String(describing: FibonacciKt.getFibonacciNumbers(count: 7))
+                     
+                    let id: String = String(describing: KoinHelperForIos().getLaunches())
                     
                     Text("SwiftUI: \(id)")
                 }
