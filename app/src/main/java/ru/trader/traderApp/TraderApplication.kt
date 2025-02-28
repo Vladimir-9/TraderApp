@@ -1,7 +1,8 @@
 package ru.trader.traderApp
 
 import android.app.Application
-import ru.trader.traderApp.di.PlatformSDK
+import ru.trader.core_database.PlatformConfiguration
+import ru.trader.shared.di.PlatformSDK
 
 class TraderApplication : Application() {
 

@@ -38,7 +38,7 @@ kotlin {
 }
 
 android {
-    namespace = "ru.trader.traderApp.coreDatabase"
+    namespace = "ru.trader.core_database"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -49,7 +49,7 @@ android {
 sqldelight {
     databases {
         create("TraderDatabase") {
-            packageName.set("ru.trader.traderApp.cache")
+            packageName.set("ru.trader.core_database.database")
         }
     }
 }

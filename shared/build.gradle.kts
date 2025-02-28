@@ -71,7 +71,7 @@ kotlin {
 }
 
 android {
-    namespace = "ru.trader.traderApp.shared"
+    namespace = "ru.trader.shared"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
