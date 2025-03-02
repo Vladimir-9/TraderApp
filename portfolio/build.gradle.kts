@@ -4,15 +4,14 @@ plugins {
 }
 
 kotlin {
-
     jvmToolchain(21)
 
     androidTarget()
 
     sourceSets {
         commonMain.dependencies {
-
-            implementation(libs.kotlinx.coroutines.core)
+            implementation(project(":core"))
+            implementation(project(":core-network"))
         }
     }
 }

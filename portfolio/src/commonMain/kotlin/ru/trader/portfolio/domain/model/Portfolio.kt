@@ -1,9 +1,13 @@
-package ru.trader.core.model
+package ru.trader.portfolio.domain.model
+
+import ru.trader.core.model.ErrorResponse
+import ru.trader.core.util.Market
 
 data class Portfolio(
-    val error: TraderError,
+    val error: ErrorResponse,
     val data: PortfolioData
 )
+
 data class PortfolioData(
     val clientId: String,
     val content: Content,
@@ -23,7 +27,7 @@ data class Content(
 
 data class Positions(
     val securityCode: String,
-    val market: String,
+    val market: Market,
     val balance: Long,
     val currentPrice: Double,
     val equity: Double,
@@ -49,7 +53,7 @@ data class Currencies(
 )
 
 data class Money(
-    val market: String,
+    val market: Market,
     val currency: String,
     val balance: Double
 )

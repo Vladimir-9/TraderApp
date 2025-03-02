@@ -1,11 +1,9 @@
-package ru.trader.core.repository
+package ru.trader.portfolio.domain
 
-import ru.trader.core.model.CheckApiKey
-import ru.trader.core.model.Portfolio
+import ru.trader.core.util.Resource
+import ru.trader.portfolio.domain.model.Portfolio
 
-interface Repository {
-
-    suspend fun checkAuthToken(): CheckApiKey
+interface PortfolioRepository {
 
     suspend fun getPortfolio(
         clientId: String,
@@ -13,5 +11,5 @@ interface Repository {
         includeMoney: Boolean = true,
         includePositions: Boolean = true,
         includeMaxBuySell: Boolean = true,
-    ): Portfolio
+    ): Resource<Portfolio>
 }

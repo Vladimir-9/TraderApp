@@ -38,7 +38,7 @@ kotlin {
 }
 
 android {
-    namespace = "ru.trader.core_database"
+    namespace = "ru.trader.core_network"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
