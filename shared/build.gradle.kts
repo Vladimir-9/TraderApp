@@ -38,8 +38,8 @@ kotlin {
             implementation(libs.multiplatformSettings)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
-            implementation(project(":core-network"))
-            implementation(project(":core-database"))
+            implementation(projects.coreNetwork)
+            implementation(projects.coreDatabase)
         }
 
         commonTest.dependencies {

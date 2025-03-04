@@ -1,8 +1,7 @@
 package ru.trader.portfolio.data
 
 import ru.trader.core.model.ErrorResponse
-import ru.trader.core.util.orFalse
-import ru.trader.core.util.orZero
+import ru.trader.core.util.Market
 import ru.trader.core_network.model.ContentDto
 import ru.trader.core_network.model.CurrenciesDto
 import ru.trader.core_network.model.ErrorResponseDto
@@ -16,65 +15,64 @@ import ru.trader.portfolio.domain.model.Money
 import ru.trader.portfolio.domain.model.Portfolio
 import ru.trader.portfolio.domain.model.PortfolioData
 import ru.trader.portfolio.domain.model.Positions
-import ru.trader.core.util.Market
 
 internal fun PortfolioDto.toDomain() = Portfolio(
-    error = this.error.toDomain(),
-    data = this.data.toDomain()
+    error = error.toDomain(),
+    data = data.toDomain(),
 )
 
-private fun ErrorResponseDto?.toDomain() = ErrorResponse(
-    code = this?.code.orEmpty(),
-    message = this?.message.orEmpty(),
-    data = this?.data.orEmpty()
+private fun ErrorResponseDto.toDomain() = ErrorResponse(
+    code = code,
+    message = message,
+    data = data,
 )
 
-private fun PortfolioDataDto?.toDomain() = PortfolioData(
-    clientId = this?.clientId.orEmpty(),
-    content = this?.content.toDomain(),
-    equity = this?.equity.toString(),
-    balance = this?.balance.orEmpty(),
-    positions = this?.positions?.map { it.toDomain() }.orEmpty(),
-    currencies = this?.currencies?.map { it.toDomain() }.orEmpty(),
-    money = this?.money?.map { it.toDomain() }.orEmpty()
+private fun PortfolioDataDto.toDomain() = PortfolioData(
+    clientId = clientId,
+    content = content.toDomain(),
+    equity = equity.toString(),
+    balance = balance,
+    positions = positions.map { it.toDomain() },
+    currencies = currencies.map { it.toDomain() },
+    money = money.map { it.toDomain() },
 )
 
-private fun ContentDto?.toDomain() = Content(
-    includeCurrencies = this?.includeCurrencies.orFalse(),
-    includeMoney = this?.includeMoney.orFalse(),
-    includePositions = this?.includePositions.orFalse(),
-    includeMaxBuySell = this?.includeMaxBuySell.orFalse()
+private fun ContentDto.toDomain() = Content(
+    includeCurrencies = includeCurrencies,
+    includeMoney = includeMoney,
+    includePositions = includePositions,
+    includeMaxBuySell = includeMaxBuySell,
 )
 
-private fun PositionsDto?.toDomain() = Positions(
-    securityCode = this?.securityCode.orEmpty(),
-    market = Market.getMarket(this?.market),
-    balance = this?.balance.orZero(),
-    currentPrice = this?.currentPrice.orZero(),
-    equity = this?.equity.orZero(),
-    averagePrice = this?.averagePrice.orZero(),
-    currency = this?.currency.orEmpty(),
-    accumulatedProfit = this?.accumulatedProfit.orZero(),
-    todayProfit = this?.todayProfit.orZero(),
-    unrealizedProfit = this?.unrealizedProfit.orZero(),
-    profit = this?.profit.orZero(),
-    maxBuy = this?.maxBuy.orZero(),
-    maxSell = this?.maxSell.orZero(),
-    priceCurrency = this?.priceCurrency.orEmpty(),
-    averagePriceCurrency = this?.averagePriceCurrency.orEmpty(),
-    averageRate = this?.averageRate.orZero()
+private fun PositionsDto.toDomain() = Positions(
+    securityCode = securityCode,
+    market = Market.getMarket(market),
+    balance = balance,
+    currentPrice = currentPrice,
+    equity = equity,
+    averagePrice = averagePrice,
+    currency = currency,
+    accumulatedProfit = accumulatedProfit,
+    todayProfit = todayProfit,
+    unrealizedProfit = unrealizedProfit,
+    profit = profit,
+    maxBuy = maxBuy,
+    maxSell = maxSell,
+    priceCurrency = priceCurrency,
+    averagePriceCurrency = averagePriceCurrency,
+    averageRate = averageRate,
 )
 
-private fun CurrenciesDto?.toDomain() = Currencies(
-    name = this?.name.orEmpty(),
-    balance = this?.balance.orZero(),
-    crossRate = this?.crossRate.orZero(),
-    equity = this?.equity.orZero(),
-    unrealizedProfit = this?.unrealizedProfit.orZero()
+private fun CurrenciesDto.toDomain() = Currencies(
+    name = name,
+    balance = balance,
+    crossRate = crossRate,
+    equity = equity,
+    unrealizedProfit = unrealizedProfit,
 )
 
-private fun MoneyDto?.toDomain() = Money(
-    market = Market.getMarket(this?.market),
-    currency = this?.currency.orEmpty(),
-    balance = this?.balance.orZero()
+private fun MoneyDto.toDomain() = Money(
+    market = Market.getMarket(market),
+    currency = currency,
+    balance = balance,
 )

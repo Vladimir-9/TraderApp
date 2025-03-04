@@ -1,4 +1,5 @@
 rootProject.name = "TraderApp"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
     repositories {

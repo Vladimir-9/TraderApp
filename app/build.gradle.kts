@@ -42,8 +42,9 @@ android {
 
 dependencies {
 
-    implementation(project(":shared"))
-    implementation(project(":core-database"))
+    implementation(projects.shared)
+    implementation(projects.core)
+    implementation(projects.coreDatabase)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

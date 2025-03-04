@@ -10,14 +10,14 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":core"))
-            implementation(project(":core-network"))
+            implementation(projects.core)
+            implementation(projects.coreNetwork)
         }
     }
 }
 
 android {
-    namespace = "ru.trader.core_network"
+    namespace = "ru.trader.portfolio"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
