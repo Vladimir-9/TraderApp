@@ -2,11 +2,12 @@ package ru.trader.core.util
 
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 
-abstract class SafeApiCall {
+public abstract class SafeApiCall {
 
-    suspend fun <T> safeApiCall(apiCall: suspend () -> T): Resource<T> {
+    public suspend fun <T> safeApiCall(apiCall: suspend () -> T): Resource<T> {
 
         return withContext(Dispatchers.IO) {
             try {

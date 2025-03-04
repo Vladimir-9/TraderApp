@@ -1,8 +1,8 @@
 package ru.trader.portfolio.data
 
-import ru.trader.portfolio.domain.PortfolioRepository
 import ru.trader.core.util.SafeApiCall
 import ru.trader.core_network.api.TraderApi
+import ru.trader.portfolio.domain.PortfolioRepository
 
 class PortfolioRepositoryImpl(private val api: TraderApi) : PortfolioRepository, SafeApiCall() {
 

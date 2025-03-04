@@ -1,5 +1,6 @@
 package ru.trader.portfolio.domain.model
 
+import ru.trader.core.EMPTY_STRING
 import ru.trader.core.model.ErrorResponse
 import ru.trader.core.util.Market
 
@@ -9,7 +10,7 @@ data class Portfolio(
 )
 
 data class PortfolioData(
-    val clientId: String,
+    val clientId: String = EMPTY_STRING,
     val content: Content,
     val equity: String,
     val balance: String,
