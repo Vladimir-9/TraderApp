@@ -1,6 +1,6 @@
 package ru.trader.core.util
 
-enum class Market(val type: String) {
+public enum class Market(private val type: String) {
     STOCK("Stock"),
     FORTS("Forts"),
     SPBEX("Spbex"),
@@ -10,7 +10,8 @@ enum class Market(val type: String) {
     OPTIONS("Options"),
     Empty("Empty");
 
-    companion object {
-        fun getMarket(market: String?) = entries.toTypedArray().find { it.type == market } ?: Empty
+    public companion object {
+        public fun getMarket(market: String): Market =
+            entries.toTypedArray().find { it.type == market } ?: Empty
     }
 }

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
+
 plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.android.library)
@@ -5,9 +7,17 @@ plugins {
 
 kotlin {
 
+    explicitApi = ExplicitApiMode.Strict
+
     jvmToolchain(21)
 
     androidTarget()
+
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    )
 
     sourceSets {
         commonMain.dependencies {
@@ -18,7 +28,7 @@ kotlin {
 }
 
 android {
-    namespace = "ru.trader.core_network"
+    namespace = "ru.trader.core"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {

@@ -2,7 +2,7 @@ package ru.trader.core.repository
 
 import ru.trader.core.model.CheckApiKey
 
-interface AuthRepository {
+public interface AuthRepository {
 
-    suspend fun checkAuthToken(): CheckApiKey
+    public suspend fun checkAuthToken(): CheckApiKey
 }
