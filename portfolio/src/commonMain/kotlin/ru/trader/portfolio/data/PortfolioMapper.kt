@@ -1,5 +1,6 @@
 package ru.trader.portfolio.data
 
+import ru.trader.core.EMPTY_STRING
 import ru.trader.core.model.ErrorResponse
 import ru.trader.core.util.Market
 import ru.trader.core_network.model.ContentDto
@@ -17,14 +18,14 @@ import ru.trader.portfolio.domain.model.PortfolioData
 import ru.trader.portfolio.domain.model.Positions
 
 internal fun PortfolioDto.toDomain() = Portfolio(
-    error = error.toDomain(),
-    data = data.toDomain(),
+    error = error?.toDomain() ?: ErrorResponse(),
+    data = data?.toDomain() ?: PortfolioData(),
 )
 
 private fun ErrorResponseDto.toDomain() = ErrorResponse(
-    code = code,
-    message = message,
-    data = data,
+    code = code ?: EMPTY_STRING,
+    message = message ?: EMPTY_STRING,
+    data = data ?: EMPTY_STRING,
 )
 
 private fun PortfolioDataDto.toDomain() = PortfolioData(

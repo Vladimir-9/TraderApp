@@ -11,19 +11,19 @@ data class Portfolio(
 
 data class PortfolioData(
     val clientId: String = EMPTY_STRING,
-    val content: Content,
-    val equity: String,
-    val balance: String,
-    val positions: List<Positions>,
-    val currencies: List<Currencies>,
-    val money: List<Money>
+    val content: Content = Content(),
+    val equity: String = EMPTY_STRING,
+    val balance: String = EMPTY_STRING,
+    val positions: List<Positions> = emptyList(),
+    val currencies: List<Currencies> = emptyList(),
+    val money: List<Money> = emptyList()
 )
 
 data class Content(
-    val includeCurrencies: Boolean,
-    val includeMoney: Boolean,
-    val includePositions: Boolean,
-    val includeMaxBuySell: Boolean
+    val includeCurrencies: Boolean = false,
+    val includeMoney: Boolean = false,
+    val includePositions: Boolean = false,
+    val includeMaxBuySell: Boolean = false,
 )
 
 data class Positions(

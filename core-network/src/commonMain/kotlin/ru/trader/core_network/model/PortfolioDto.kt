@@ -7,7 +7,7 @@ import ru.trader.core.EMPTY_STRING
 
 @Serializable
 data class PortfolioDto(
-    val data: PortfolioDataDto = PortfolioDataDto(),
+    val data: PortfolioDataDto?,
 ) : CommonResponseDto()
 
 @Serializable

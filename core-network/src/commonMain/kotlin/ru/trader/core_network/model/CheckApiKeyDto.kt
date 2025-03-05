@@ -5,7 +5,7 @@ import ru.trader.core.EMPTY_INT
 
 @Serializable
 data class CheckApiKeyDto(
-    val data: DataCheckApiKeyDto = DataCheckApiKeyDto(),
+    val data: DataCheckApiKeyDto? = null,
 ) : CommonResponseDto()
 
 @Serializable
