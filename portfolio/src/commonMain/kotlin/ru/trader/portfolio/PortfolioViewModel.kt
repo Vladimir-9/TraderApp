@@ -21,7 +21,8 @@ class PortfolioViewModel(private val repository: PortfolioRepository) : SharedVi
 
                 is Resource.Failure -> Unit
 
-                is Resource.Success -> _state.value = _state.value.copy(portfolio = res.value)
+                is Resource.Success -> _state.value =
+                    _state.value.copy(loading = false, portfolio = res.value)
             }
         }
     }

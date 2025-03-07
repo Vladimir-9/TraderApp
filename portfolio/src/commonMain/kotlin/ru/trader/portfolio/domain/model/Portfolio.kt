@@ -6,8 +6,8 @@ import ru.trader.core.model.ErrorResponse
 import ru.trader.core.util.Market
 
 data class Portfolio(
-    val error: ErrorResponse,
-    val data: PortfolioData
+    val error: ErrorResponse = ErrorResponse(),
+    val data: PortfolioData = PortfolioData(),
 )
 
 data class PortfolioData(

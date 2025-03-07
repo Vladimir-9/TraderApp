@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.koin.androidx.compose)
     implementation(libs.arkivanov.decompose)
     implementation(libs.arkivanov.decompose.ext)
+    implementation(libs.androidx.core.splashscreen)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
