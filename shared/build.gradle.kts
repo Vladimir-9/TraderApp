@@ -38,8 +38,12 @@ kotlin {
             implementation(libs.multiplatformSettings)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
+            implementation(libs.arkivanov.decompose)
+            implementation(libs.arkivanov.decompose.ext)
+
             implementation(projects.coreNetwork)
             implementation(projects.coreDatabase)
+            implementation(projects.portfolio)
         }
 
         commonTest.dependencies {

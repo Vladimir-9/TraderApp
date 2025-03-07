@@ -7,6 +7,9 @@ import org.koin.dsl.module
 import ru.trader.shared.MockRepository
 import ru.trader.core_database.PlatformConfiguration
 import ru.trader.core_database.database.databaseModule
+import ru.trader.core_network.di.networkModule
+import ru.trader.positionDetail.di.detailPositionModule
+import ru.trader.portfolio.di.portfolioModule
 
 object PlatformSDK {
 
@@ -20,7 +23,10 @@ object PlatformSDK {
 
     fun init(configuration: PlatformConfiguration) = startKoin {
         modules(
+            portfolioModule,
+            detailPositionModule,
             mockRepositoryModule,
+            networkModule,
             databaseModule(configuration)
         )
     }

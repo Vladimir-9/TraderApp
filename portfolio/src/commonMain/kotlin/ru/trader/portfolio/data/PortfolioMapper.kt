@@ -11,11 +11,11 @@ import ru.trader.core_network.model.PortfolioDataDto
 import ru.trader.core_network.model.PortfolioDto
 import ru.trader.core_network.model.PositionsDto
 import ru.trader.portfolio.domain.model.Content
-import ru.trader.portfolio.domain.model.Currencies
+import ru.trader.portfolio.domain.model.Currency
 import ru.trader.portfolio.domain.model.Money
 import ru.trader.portfolio.domain.model.Portfolio
 import ru.trader.portfolio.domain.model.PortfolioData
-import ru.trader.portfolio.domain.model.Positions
+import ru.trader.portfolio.domain.model.Position
 
 internal fun PortfolioDto.toDomain() = Portfolio(
     error = error?.toDomain() ?: ErrorResponse(),
@@ -45,7 +45,7 @@ private fun ContentDto.toDomain() = Content(
     includeMaxBuySell = includeMaxBuySell,
 )
 
-private fun PositionsDto.toDomain() = Positions(
+private fun PositionsDto.toDomain() = Position(
     securityCode = securityCode,
     market = Market.getMarket(market),
     balance = balance,
@@ -64,7 +64,7 @@ private fun PositionsDto.toDomain() = Positions(
     averageRate = averageRate,
 )
 
-private fun CurrenciesDto.toDomain() = Currencies(
+private fun CurrenciesDto.toDomain() = Currency(
     name = name,
     balance = balance,
     crossRate = crossRate,

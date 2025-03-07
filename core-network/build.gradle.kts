@@ -1,7 +1,11 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.buildConfig)
 }
 
 kotlin {
@@ -23,6 +27,8 @@ kotlin {
             implementation(libs.ktor.client.serialization.json)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.client.logging)
+            implementation(libs.koin.core)
+
             implementation(projects.core)
         }
 
@@ -44,4 +50,15 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
     }
+}
+
+
+val keystorePropertiesFile = rootProject.file("local.properties")
+val keystoreProperties = Properties()
+keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+
+buildConfig {
+    val apiKey= keystoreProperties["API_KEY"].toString()
+
+    buildConfigField("API_KEY", apiKey)
 }

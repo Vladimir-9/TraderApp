@@ -23,6 +23,9 @@ kotlin {
         commonMain.dependencies {
 
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.arkivanov.decompose)
+            implementation(libs.koin.core)
+            implementation(libs.kermit)
         }
     }
 }

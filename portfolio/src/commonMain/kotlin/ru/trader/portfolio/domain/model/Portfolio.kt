@@ -1,5 +1,6 @@
 package ru.trader.portfolio.domain.model
 
+import kotlinx.serialization.Serializable
 import ru.trader.core.EMPTY_STRING
 import ru.trader.core.model.ErrorResponse
 import ru.trader.core.util.Market
@@ -14,8 +15,8 @@ data class PortfolioData(
     val content: Content = Content(),
     val equity: String = EMPTY_STRING,
     val balance: String = EMPTY_STRING,
-    val positions: List<Positions> = emptyList(),
-    val currencies: List<Currencies> = emptyList(),
+    val positions: List<Position> = emptyList(),
+    val currencies: List<Currency> = emptyList(),
     val money: List<Money> = emptyList()
 )
 
@@ -26,7 +27,8 @@ data class Content(
     val includeMaxBuySell: Boolean = false,
 )
 
-data class Positions(
+@Serializable
+data class Position(
     val securityCode: String,
     val market: Market,
     val balance: Long,
@@ -45,7 +47,7 @@ data class Positions(
     val averageRate: Double
 )
 
-data class Currencies(
+data class Currency(
     val name: String,
     val balance: Double,
     val crossRate: Double,

@@ -45,6 +45,7 @@ dependencies {
     implementation(projects.shared)
     implementation(projects.core)
     implementation(projects.coreDatabase)
+    implementation(projects.portfolio)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -56,6 +57,8 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.koin.core)
     implementation(libs.koin.androidx.compose)
+    implementation(libs.arkivanov.decompose)
+    implementation(libs.arkivanov.decompose.ext)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
