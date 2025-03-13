@@ -20,8 +20,12 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "ComposeApp"
+            baseName = "Shared"
             isStatic = true
+
+            export(libs.arkivanov.decompose)
+            export(libs.arkivanov.decompose.life)
+            export(libs.arkivanov.decompose.keep)
         }
     }
 
@@ -38,7 +42,9 @@ kotlin {
             implementation(libs.multiplatformSettings)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
-            implementation(libs.arkivanov.decompose)
+            api(libs.arkivanov.decompose)
+            api(libs.arkivanov.decompose.life)
+            api(libs.arkivanov.decompose.keep)
             implementation(libs.arkivanov.decompose.ext)
 
             implementation(projects.coreNetwork)

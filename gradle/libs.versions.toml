@@ -29,6 +29,9 @@ composeBom = "2025.02.00"
 
 decompose = "3.3.0"
 
+decomposeLife = "2.5.0"
+decomposePars = "0.2.4"
+
 [libraries]
 
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
@@ -68,6 +71,10 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 
 arkivanov-decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
 arkivanov-decompose-ext = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decompose" }
+
+arkivanov-decompose-life = { module = "com.arkivanov.essenty:lifecycle", version.ref = "decomposeLife" }
+arkivanov-decompose-keep = { module = "com.arkivanov.essenty:state-keeper", version.ref = "decomposeLife" }
+arkivanov-decompose-darwin = { module = "com.arkivanov.parcelize.darwin:runtime", version.ref = "decomposePars" }
 
 [plugins]
 
