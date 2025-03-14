@@ -14,9 +14,9 @@ internal struct PortfolioView: View {
     }
     
     var body: some View {
-        if (state.loading) { LoadingView() }
-        else if (state.error) { ErrorView() }
-        else if (state.portfolio.data.positions.isEmpty) { EmptyView() }
+        if (state.loading) { PortfolioLoadingView() }
+        else if (state.error) { PortfolioErrorView() }
+        else if (state.portfolio.data.positions.isEmpty) { PortfolioEmptyView() }
         else { content(data: state.portfolio.data) }
     }
     
@@ -50,19 +50,19 @@ private struct PositionCardView: View {
     }
 }
 
-private struct LoadingView: View {
+private struct PortfolioLoadingView: View {
     var body: some View {
         Text("LoadingView")
     }
 }
 
-private struct ErrorView: View {
+private struct PortfolioErrorView: View {
     var body: some View {
         Text("ErrorView")
     }
 }
 
-private struct EmptyView: View {
+private struct PortfolioEmptyView: View {
     var body: some View {
         VStack {
             Text("Список пуст")
