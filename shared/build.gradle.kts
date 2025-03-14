@@ -26,6 +26,7 @@ kotlin {
             export(libs.arkivanov.decompose)
             export(libs.arkivanov.decompose.life)
             export(libs.arkivanov.decompose.keep)
+            export(projects.portfolio)
         }
     }
 
@@ -49,7 +50,7 @@ kotlin {
 
             implementation(projects.coreNetwork)
             implementation(projects.coreDatabase)
-            implementation(projects.portfolio)
+            api(projects.portfolio)
         }
 
         commonTest.dependencies {

@@ -15,7 +15,7 @@ struct RootView: View {
             onBack: root.onBackClicked
         ) { child in
             switch child {
-                case let child as PortfolioChild: PortfolioView()
+                case let child as PortfolioChild: PortfolioView(child.component)
                 case let child as PositionDetailChild: PositionDetailView()
                 default: EmptyView()
             }
