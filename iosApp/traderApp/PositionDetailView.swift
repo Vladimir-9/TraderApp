@@ -1,8 +1,19 @@
 import SwiftUI
 import Shared
 
-struct PositionDetailView: View {
+internal struct PositionDetailView: View {
+    
+    private let component: PositionDetailComponent
+    
+    @StateValue
+    private var state: PositionDetailViewState
+
+    init(_ component: PositionDetailComponent) {
+        self.component = component
+        _state = StateValue(component.state)
+    }
+    
     var body: some View {
-        Text("PositionDetailView")
+        Text("\(state.position.currentPrice)")
     }
 }

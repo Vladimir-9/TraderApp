@@ -16,7 +16,7 @@ struct RootView: View {
         ) { child in
             switch child {
                 case let child as PortfolioChild: PortfolioView(child.component)
-                case let child as PositionDetailChild: PositionDetailView()
+                case let child as PositionDetailChild: PositionDetailView(child.component)
                 default: EmptyView()
             }
         }
