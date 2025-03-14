@@ -17,6 +17,6 @@ class PositionDetailComponentImpl(
         ParametersHolder(mutableListOf(position))
     }
 
-    override val viewState: Value<PositionDetailViewState> = viewModel.state
+    override val state: Value<PositionDetailViewState> = viewModel.state
 
 }

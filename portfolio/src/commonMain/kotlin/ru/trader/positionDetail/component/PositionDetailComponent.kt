@@ -5,5 +5,5 @@ import ru.trader.positionDetail.data.model.PositionDetailViewState
 
 interface PositionDetailComponent {
 
-    val viewState: Value<PositionDetailViewState>
+    val state: Value<PositionDetailViewState>
 }

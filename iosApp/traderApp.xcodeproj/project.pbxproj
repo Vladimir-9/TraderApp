@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		675337EA2D5E001800F153E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675337E62D5E001700F153E5 /* ContentView.swift */; };
+		675295B42D831F41005EF6BA /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675295B32D831F41005EF6BA /* ObservableValue.swift */; };
+		675295B62D832280005EF6BA /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675295B52D832280005EF6BA /* StackView.swift */; };
 		675337EB2D5E001800F153E5 /* TraderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675337E82D5E001700F153E5 /* TraderApp.swift */; };
+		67770F962D83108B001D904B /* StateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67770F952D831086001D904B /* StateValue.swift */; };
+		77834FF52D83279100D2A4E5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77834FF42D83278C00D2A4E5 /* RootView.swift */; };
+		77834FF82D83285300D2A4E5 /* PositionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77834FF72D83284F00D2A4E5 /* PositionDetailView.swift */; };
+		77834FFA2D83286100D2A4E5 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77834FF92D83285F00D2A4E5 /* PortfolioView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		675337E62D5E001700F153E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		675295B32D831F41005EF6BA /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
+		675295B52D832280005EF6BA /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		675337E72D5E001700F153E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		675337E82D5E001700F153E5 /* TraderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraderApp.swift; sourceTree = "<group>"; };
+		67770F952D831086001D904B /* StateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValue.swift; sourceTree = "<group>"; };
+		77834FF42D83278C00D2A4E5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		77834FF72D83284F00D2A4E5 /* PositionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailView.swift; sourceTree = "<group>"; };
+		77834FF92D83285F00D2A4E5 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		A93A953729CC810C00F8E227 /* Multiplatform App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiplatform App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,11 +42,24 @@
 		675337E92D5E001700F153E5 /* traderApp */ = {
 			isa = PBXGroup;
 			children = (
-				675337E62D5E001700F153E5 /* ContentView.swift */,
+				77834FF92D83285F00D2A4E5 /* PortfolioView.swift */,
+				77834FF72D83284F00D2A4E5 /* PositionDetailView.swift */,
+				77834FF42D83278C00D2A4E5 /* RootView.swift */,
+				77834FF32D83272300D2A4E5 /* DecomposeHelpers */,
 				675337E72D5E001700F153E5 /* Info.plist */,
 				675337E82D5E001700F153E5 /* TraderApp.swift */,
 			);
 			path = traderApp;
+			sourceTree = "<group>";
+		};
+		77834FF32D83272300D2A4E5 /* DecomposeHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				675295B32D831F41005EF6BA /* ObservableValue.swift */,
+				67770F952D831086001D904B /* StateValue.swift */,
+				675295B52D832280005EF6BA /* StackView.swift */,
+			);
+			path = DecomposeHelpers;
 			sourceTree = "<group>";
 		};
 		A93A952E29CC810C00F8E227 = {
@@ -151,8 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				675337EA2D5E001800F153E5 /* ContentView.swift in Sources */,
+				67770F962D83108B001D904B /* StateValue.swift in Sources */,
+				77834FF52D83279100D2A4E5 /* RootView.swift in Sources */,
+				675295B42D831F41005EF6BA /* ObservableValue.swift in Sources */,
+				77834FF82D83285300D2A4E5 /* PositionDetailView.swift in Sources */,
 				675337EB2D5E001800F153E5 /* TraderApp.swift in Sources */,
+				77834FFA2D83286100D2A4E5 /* PortfolioView.swift in Sources */,
+				675295B62D832280005EF6BA /* StackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

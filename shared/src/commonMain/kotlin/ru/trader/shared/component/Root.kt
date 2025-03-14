@@ -19,6 +19,8 @@ interface Root {
 
     fun onBackClicked()
 
+    fun onBackClicked(toIndex: Int)
+
     sealed class Child {
         class PortfolioChild(val component: PortfolioComponentImpl) : Child()
         class PositionDetailChild(val component: PositionDetailComponentImpl) : Child()

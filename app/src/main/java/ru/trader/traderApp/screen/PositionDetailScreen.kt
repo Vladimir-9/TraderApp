@@ -15,7 +15,7 @@ import ru.trader.positionDetail.component.PositionDetailComponent
 @Composable
 fun PositionDetailScreen(component: PositionDetailComponent) {
 
-    val model = component.viewState.subscribeAsState()
+    val model = component.state.subscribeAsState()
 
     Column(
         modifier = Modifier

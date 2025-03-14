@@ -17,13 +17,14 @@ class PortfolioViewModel(private val repository: PortfolioRepository) : SharedVi
     init {
         coroutineScope.launch {
 
-            when (val res = repository.getPortfolio(BuildConfig.CLIENT_ID)) {
+            val state = when (val res = repository.getPortfolio(BuildConfig.CLIENT_ID)) {
 
-                is Resource.Failure -> Unit
+                is Resource.Failure -> _state.value.copy(loading = false)
 
-                is Resource.Success -> _state.value =
-                    _state.value.copy(loading = false, portfolio = res.value)
+                is Resource.Success -> _state.value.copy(loading = false, portfolio = res.value)
             }
+
+            _state.value = state
         }
     }
 }
